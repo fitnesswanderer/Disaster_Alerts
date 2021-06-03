@@ -49,7 +49,6 @@ def tokenize(text):
 
     return clean_tokens
     pass
-    pass
 
 
 def build_model():
