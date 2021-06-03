@@ -26,12 +26,12 @@ def tokenize(text):
     return clean_tokens
 
 # load data
-engine = create_engine('sqlite:///../data/YourDatabaseName.db')
-df = pd.read_sql_table('YourTableName', engine)
+engine = create_engine('sqlite:///../data/DisasterResponse.db')
+df = pd.read_sql_table('DisasterResponse', engine)
 
 # load model
-model = joblib.load("../models/your_model_name.pkl")
-
+model = joblib.load("../models/classifier.pkl")
+print('loaded the pickle now')
 
 # index webpage displays cool visuals and receives user input text for model
 @app.route('/')
@@ -42,6 +42,16 @@ def index():
     # TODO: Below is an example - modify to extract data for your own visuals
     genre_counts = df.groupby('genre').count()['message']
     genre_names = list(genre_counts.index)
+    
+    vis = df.drop(columns=['id', 'message', 'original', 'genre']);
+    
+    count = vis.sum().sort_values(ascending=False)
+    
+    categories = count.index
+    #Number of messages for medical help
+    medicalhelp_counts = df.groupby(['medical_help']).count()['message']
+    category_medicalhelp_names = ['Medical_help' if i==1 else 'Medical_help' for i in list(medicalhelp_counts.index)] 
+    
     
     # create visuals
     # TODO: Below is an example - modify to create your own visuals
@@ -63,8 +73,46 @@ def index():
                     'title': "Genre"
                 }
             }
+        },
+         {
+            'data': [
+                Bar(
+                    x=categories,
+                    y=count
+                )
+            ],
+
+            'layout': {
+                'title': 'Count of Messages for Each Category',
+                'yaxis': {
+                    'title': "Count"
+                },
+                'xaxis': {
+                    'title': "Message Categories"
+                }, 
+                'template': 'plotly_dark'
+            }
+        },
+        {
+            'data': [
+                Bar(
+                    x=category_medicalhelp_names,
+                    y=medicalhelp_counts
+                )
+            ],
+
+            'layout': {
+                'title': ' Medical_help  Messages <br> out of all Messages',
+                'yaxis': {
+                    'title': "Count"
+                },
+                'xaxis': {
+                    'title': ""
+                }
+            }
         }
     ]
+   
     
     # encode plotly graphs in JSON
     ids = ["graph-{}".format(i) for i, _ in enumerate(graphs)]
