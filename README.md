@@ -16,9 +16,9 @@ Disasters are vulnerable situation and respondents needs help  immediately.The p
  
 | - template
 
-| |- master.html  # main page of web app
+|- master.html  # main page of web app
 
-| |- go.html  # classification result page of web app
+|- go.html  # classification result page of web app
 
 |- run.py  # Flask file that runs app
 
@@ -34,9 +34,9 @@ Disasters are vulnerable situation and respondents needs help  immediately.The p
 
 - models
 
--|- train_classifier.py
+|- train_classifier.py
 
--|- classifier.pkl  # saved model 
+|- classifier.pkl  # saved model 
 
 - README.md
 
