@@ -2,29 +2,41 @@
 
 ## Table of contents
 Project Motivation
+
 File structure
+
 Installation
+
 Licensing and Acknowledgements
 
 ## Project Motivation
 Disasters are vulnerable situation and respondents needs help  immediately.The platform helps essential services and first responders to quickly identify relevant messages at the time of crisis to assess the situation and deploy adequate forces where needed.
 ## File structure
 - app
-- 
+ 
 | - template
+
 | |- master.html  # main page of web app
+
 | |- go.html  # classification result page of web app
+
 |- run.py  # Flask file that runs app
 
 - data
-|- disaster_categories.csv  # data to process 
+
+|- disaster_categories.csv  # data to process
+
 |- disaster_messages.csv  # data to process
+
 |- process_data.py
+
 |- InsertDatabaseName.db   # database to save clean data to
 
 - models
-|- train_classifier.py
-|- classifier.pkl  # saved model 
+
+-|- train_classifier.py
+
+-|- classifier.pkl  # saved model 
 
 - README.md
 
@@ -40,15 +52,25 @@ Displays visualisations of the training datasets.
 
 ## Installation
 python (>=3.6)
+
 pandas
+
 numpy
+
 sqlalchemy
+
 sys
+
 plotly
+
 sklearn
+
 joblib
+
 flask
+
 nltk
+
 ### Instructions:
 1. Run the following commands in the project's root directory to set up your database and model.
 
@@ -65,5 +87,4 @@ nltk
 ## Licensing and Acknowlegements
 Thank you Figure Eight for providing the dataset. Udacity for giving the structure of code to help in implementing ETLand ML pipeline and deployment using flask.I would like to thank Maria Vaghani and Evans Doe for their help. All files in this repository are free to use.
 
-Pictures from Web App
 
