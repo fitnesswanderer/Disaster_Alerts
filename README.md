@@ -87,4 +87,9 @@ nltk
 ## Licensing and Acknowlegements
 Thank you Figure Eight for providing the dataset. Udacity for giving the structure of code to help in implementing ETLand ML pipeline and deployment using flask.I would like to thank Maria Vaghani and Evans Doe for their help. All files in this repository are free to use.
 
+## Screenshots of WebApp
+![DSRPR_1](https://user-images.githubusercontent.com/12171326/120747090-11028280-c51e-11eb-8194-8cc363f7aa21.JPG)
+![DSRPR_2](https://user-images.githubusercontent.com/12171326/120747104-18299080-c51e-11eb-8e58-da7ece65f843.JPG)
+![DSPRR_3](https://user-images.githubusercontent.com/12171326/120747136-27104300-c51e-11eb-944a-fbdd4e0e6a85.JPG)
+
 
