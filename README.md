@@ -10,6 +10,7 @@ Licensing and Acknowledgements
 Disasters are vulnerable situation and respondents needs help  immediately.The platform helps essential services and first responders to quickly identify relevant messages at the time of crisis to assess the situation and deploy adequate forces where needed.
 ## File structure
 - app
+- 
 | - template
 | |- master.html  # main page of web app
 | |- go.html  # classification result page of web app
